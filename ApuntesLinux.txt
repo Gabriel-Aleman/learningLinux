@@ -1,0 +1,133 @@
+A la izquierda del arroba nos dice el ususario.
+Seguidamente nos diche el nombre del sistema.
+Por último nos dice el directorio donde nos encontramos.
+--------------------------------------------------------------------------------------------------------------
+clear:limpiar
+
+pwd: imprime el directorio donde me encuentro.
+
+ls: Listame el contenido del directorio
+	ls					-directorio actual			
+	ls <directoryName> 			-directorio espificiado.
+	ls <directoryName> -l 			-directorio y toda lala información disponible.
+	ls /<directoryName1> <directoryName1>/  -directorios múltiples.
+-l: Me los muestra en forma de una lista y con la infmación importante. (Orden alfabetico por defecto)
+-h: Muestra el tamaño de una manera más legible (Kbytes,Gbytes...)
+-S: Ordena los contenidos por tamaño (mayor a menor)
+-t: Ordena los contenidos por fecha de última modificación.
+-r: Ordena los contenidos invirtiendo el criterio de ordenación.
+-a: Muestra información oculta.
+--------------------------------------------------------------------------------------------------------------
+observación
+Todos los comandos deben seguir el siguiente formato:
+	<commandName>	 <CommandOption>	 <ComandParameter>
+
+	Acción a re-	Como quiero rea-	Información  adicional
+	lizar.		lizar la acción.	que le debo proveer al 
+						comando, es decir don-
+						de realizar la acción.
+--------------------------------------------------------------------------------------------------------------
+cd: Me permite cambiar de directorio.
+	cd <directoryName>			-Me lleva al directorio  que le especifique.
+	cd 					-Directorio personal (~) 
+Ruta realtivas: Depende del directorio donde me encuntre, lo que implica que solo puedo acceder a directorios
+		en relación a mi posición actual.
+Rutas absolutas: Están especificadas con respecto al "/" descendiendo en la jerarquí.
+
+Atajos:
+	. 	(Directorio actual)
+	.. 	(Directorio anterior)
+
+/ -> Se refiere al Root o la raíz.
+--------------------------------------------------------------------------------------------------------------
+Linux distingue entre minúsculas y mayúsculas, lo que los puede volver distintos.
+Así mismo es sensible al uso de espacios (es un elemento separador entre cosas distintas).
+
+history: Me imprime todos los comandos que he usado y los numera, de forma que si quiero usar el comando n de-
+	 bo escribir:
+	!n
+Atajos:
+Los cursores de arriba y abajo, me pemiten seleccionar comandos previamente empleados. 
+El tab me permite autocompletar información.
+
+ctrl+u me permite borrar la línea actual.
+ctrl+r me permite buscar navegando un comando previamente utilizado.
+--------------------------------------------------------------------------------------------------------------
+mkdir: Crea directorios.
+	mkdir <dirNamer>			Crea un único directorio.
+	mkdir <dirNamer1> <dirNamer2> ....	Crea múltiples directorios.
+
+	mkdir <dirNamer> -p 			Si algo no existe en la ruta lo crea.
+
+rm: Borra un archivo
+-r:Borra un directorio y todo su contenido
+
+touch: Crea un archivo
+	touch <fileName>
+
+mv: permite enviarlo de un directorio a otro o cambiarle de nombre.
+	mv <fileName> <New directoy>
+	mv <fileName1> <fileName2>
+
+cat: Muestra el contenido de texto de un archivo.
+--------------------------------------------------------------------------------------------------------------
+df: Despliega información de relativa a la memoria.
+-h: Human readable
+	df <dirName>
+Si no le le especifica nada asume que queremos saber acerca de la memoria del sitema.
+
+du:Muestra el espacio del disco que usa un directorio especifico
+-h: Human readable
+	du -sh * Información del consumo de memoria este directorio
+	du -sh 	 Información de la memoria de este directorio.
+--------------------------------------------------------------------------------------------------------------
+ln:Crea un enlace a un elmento del sistema de archivos.
+Sin añadir ninguna opción creamos un enlace duro mientras que si le añadimos un "-s" creamos un enlace sim-
+bolico (es decir un acceso directo).
+Enlace duro: Es un puntero a la infomacion que dicho archivo. Son distintos nombres para una misma info. Así
+	     que no crea una copia, sino que muestra los mismos datos.
+	ln <something> <pointerName>
+
+	(No se puede usar con directorios, solo archivos)
+
+Enlace simbolico: Corresponde a una copia de su path.
+	ln -l <something> <directAccesName>
+ 
+Si hago "ls -l" me despliega la cantidad de archivos que lo tienen como enlace
+
+echo: Imprime texto en la terminal o guarda dicho texto en un archivo que le especifique.
+	echo "text"
+	echo "text" >>  <fileName>
+
+Si el archivo no existe, lo crea.
+
+--------------------------------------------------------------------------------------------------------------
+cp: Copia un archivo
+
+cp <sourceFile> <directory> 	|	 cp <sourceFile> <file>
+
+-Copia el archivo en un nuevo 		-Copia el cotenido del archivo en tor
+ directorio		       		archivo diferente.
+
+-r: Permitirá copiar directorios.
+
+
+SIEMPRE EL ORDEN DE SINTAXÍS ES>
+
+	ORIGEN		->	DESTINO
+
+--------------------------------------------------------------------------------------------------------------
+
+El asterisco "*" sirve para decir "Me da igual"
+Es decir que selecciona todo lo que cumple con lo que le especifique.
+
+<command> <elementCriteria>* ->Lo que le siga
+
+<command> <elementCriteria>*.* -> Sirve para los ficheros que tengan una extensión.
+<command> <elementCriteria>*<char>* ->Muestra lo que contenga dicho caracter
+
+El signo de pregunta "?" sirve todo lo que me da igual
+
+
+<command> <elementCriteria>?
+Caracter generico
